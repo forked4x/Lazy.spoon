@@ -174,8 +174,10 @@ function obj:_bindKeys(keys, modal)
                         local saved = self._active_app_modal
                         if saved then saved:exit() end
                         raw()
-                        self._modal:enter()
-                        if saved then saved:enter() end
+                        hs.timer.doAfter(0.1, function()
+                            self._modal:enter()
+                            if saved then saved:enter() end
+                        end)
                     end
                 end
 
