@@ -229,7 +229,7 @@ function obj:_loadAndConfigureAll()
 
         -- Run config function
         if spec.config and type(spec.config) == "function" and s then
-            local cfg_ok, cfg_err = pcall(spec.config, s)
+            local cfg_ok, cfg_err = pcall(spec.config)
             if not cfg_ok then
                 log.w("config error for", name .. ":", tostring(cfg_err))
             end

@@ -34,8 +34,8 @@ spoon.Lazy:setup({
 
   { "forked4x/Caffeine.spoon",
     -- Configure spoon
-    config = function(spoon)
-      spoon:bindHotkeys({
+    config = function()
+      spoon.Caffeine:bindHotkeys({
         toggle = {{"cmd", "alt", "ctrl"}, "C"}
       })
     end,
@@ -106,7 +106,7 @@ Each entry in the `setup` list is a **LazySpec** table:
 | Field | Type | Default | Description |
 |-------|------|---------|-------------|
 | `[1]` | `string` | *(required)* | Source — GitHub shorthand (`"user/Name.spoon"`), release ZIP path, or full URL |
-| `config` | `function(spoon)` | `nil` | Called with the loaded spoon object before start |
+| `config` | `function()` | `nil` | Called before start; access spoons via `spoon.Name` |
 | `start` | `boolean` | `true` | Whether to call `spoon:start()` after config |
 
 ## License
